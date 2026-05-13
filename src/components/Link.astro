@@ -1,5 +1,17 @@
 ---
-// Henter parametrene fra Astro.props
-const { href="#", target="_self"} = Astro.props; 
+const { href = "#", target = "_self", variant } = Astro.props;
+
+const variants = {
+  menu: "text-default text-base lg:text-2xl hover:underline hover:decoration-accent",
+  menudark: "text-dark",
+  footer:
+    "text-default text-base pr-gutter lg:pr-2xl lg:text-3xl hover:bg-accent",
+  footerdark: "text-dark hover:bg-accent hover:text-default",
+};
+
+const classes = variants[variant] || "";
 ---
-<a href={href} class="underline" target={target}><slot /></a>
+
+<a href={href} class={`${classes}`} target={target}>
+  <slot />
+</a>

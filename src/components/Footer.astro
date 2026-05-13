@@ -1,6 +1,39 @@
 ---
+import Text from "./Text.astro";
+import Link from "./Link.astro";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
-</div>
-  
+
+<div class="border-t-2 border-primary"></div>
+<section class="pt-3xl pb-2xl lg:pt-5xl lg:pb-4xl px-gutter lg:px-xl">
+  <div class="flex justify-end h-40">
+    <Link href="#" class="inline-block">
+      <img src="/arrow+text.png" alt="Pil knap" class="h-full object-contain" />
+    </Link>
+  </div>
+  <section class="lg:flex lg:flex-row lg:justify-between">
+    <div class="flex flex-col pt-2xl gap-sm items-start lg:pt-0">
+      <Link href="#" variant="footer">work</Link>
+      <Link href="#" variant="footer">branded content</Link>
+      <Link href="#" variant="footer">services</Link>
+      <Link href="#" variant="footer">about</Link>
+      <Link href="#" variant="footer">contact</Link>
+    </div>
+    <div
+      class="flex lg:justify-end pt-xl lg:pb-0 lg:items-end lg:pt-4xl lg:text-right"
+    >
+      <Text variant="footer"
+        >Kapelvej 46B-Baghuset <br />2200 Copenhagen N, Denmark <br />CVR
+        35815279</Text
+      >
+    </div>
+  </section>
+  <section class="flex flex-row justify-between pt-3xl lg:pt-2xl">
+    <div class="w-50 lg:w-100">
+      <img src="/logo.png" alt="Bermudas logo" />
+    </div>
+    <div class="flex flex-row h-10 lg:h-15 gap-sm">
+      <img src="/facebook_logo.png" alt="Facebook logo" />
+      <img src="/instagram_logo.png" alt="Instagram logo" />
+    </div>
+  </section>
+</section>

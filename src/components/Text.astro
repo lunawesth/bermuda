@@ -1,0 +1,18 @@
+---
+const { variant = "body", stylingclasses = "" } = Astro.props;
+
+const sizeClasses = {
+  body: "text-base",
+  bodybold: "font-medium text-base lg:text-2xl",
+  bodysmall: "text-base lg:text-2xl",
+  footer: "text-base lg:text-3xl",
+};
+
+const baseTextColor = "text-default";
+
+const mergedStylingClasses = `${baseTextColor} ${stylingclasses ?? ""}`;
+---
+
+<p class:list={[sizeClasses[variant], mergedStylingClasses]}>
+  <slot />
+</p>

@@ -1,5 +1,26 @@
 ---
+const { variant, type = "button", href, ...rest } = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center rounded-full px-lg py-md text-xs lg:text-base";
+
+const variants = {
+  default:
+    "btn-header text-default btn-default hover:bg-accent hover:border-accent duration-200",
+  dark: "btn-dark text-dark",
+};
+
+const classes = `${base} ${variants[variant]} ${rest.class ?? ""}`;
 ---
-<div>
-    <button class="border-2 border-black"><slot /></button>
-</div>
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} {...rest} class={classes}>
+      <slot />
+    </button>
+  )
+}

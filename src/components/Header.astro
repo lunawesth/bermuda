@@ -1,5 +1,26 @@
 ---
+import Link from "./Link.astro";
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<section>
+  <!-- grøn top -->
+  <div class="bg-nav-green py-lg"></div>
+  <!-- logo + menu -->
+  <div class="bg-nav py-lg flex flex-row gap-3xl">
+    <img src="/logo.png" alt="Bermuda logo" class="h-8.25 md:h-12 z-100" />
+    <div class="hidden lg:block">
+      <ul class="flex flex-row gap-2xl">
+        <li><Link href="" variant="menu">work</Link></li>
+        <li>
+          <Link href="" variant="menu">branded content</Link>
+        </li>
+        <li><Link href="" variant="menu">services</Link></li><li>
+          <Link href="" variant="menu">about</Link>
+        </li>
+        <li>
+          <Link href="" variant="menu">contact</Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

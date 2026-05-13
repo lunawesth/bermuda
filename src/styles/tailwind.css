@@ -1,27 +1,78 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/forms';
-@import "tailwindcss-animated";
-@import "tailwindcss-intersect";
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
+  /* Farver */
+  --color-primary: #151515;
+  --color-secondary: #f7f7f5;
+  --color-accent: #caff45;
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-gutter: 20px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 96px;
+  --spacing-4xl: 128px;
+  --spacing-5xl: 192px;
 }
 
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+  body {
+    font-family: "helvetica-neue-lt-pro", sans-serif;
+  }
+
+  /* Background */
+  .bg-nav {
+    background-color: var(--color-secondary);
+  }
+
+  .bg-nav-green {
+    background-color: var(--color-accent);
+  }
+
+  .bg-nav-dark {
+    background-color: var(--color-primary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  /* Button */
+  .btn-default {
+    border: solid var(--color-primary) 2px;
+  }
+
+  .btn-dark {
+    border: solid var(--color-secondary) 2px;
+  }
+
+  /* Link hover*/
+
+  .footer-hover:hover {
+    background-color: var(--color-accent);
+  }
+
+  /* Text */
+
+  .text-default {
+    color: var(--color-primary);
+  }
+
+  .text-dark {
+    color: var(--color-secondary);
   }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
 }

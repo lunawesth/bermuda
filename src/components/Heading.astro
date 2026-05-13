@@ -1,0 +1,31 @@
+---
+const {
+  htmlheading = "h2",
+  size = "medium",
+  weight = "regular",
+  stylingclasses = "",
+} = Astro.props;
+
+const Htmlheading = htmlheading;
+
+const sizeClasses = {
+  xsmall: "text-base lg:text-2xl",
+  large: "text-3xl lg:text-6xl",
+  xlarge: "text-4xl lg:text-7xl",
+  xxlarge: "text-6xl lg:text-9xl",
+};
+
+const weightClasses = {
+  regular: "font-regular",
+  bold: "font-bold",
+};
+
+const baseTextColor = "text-default";
+const mergedStylingClasses = `${baseTextColor} ${stylingclasses ?? ""}`;
+---
+
+<Htmlheading
+  class:list={[sizeClasses[size], weightClasses[weight], mergedStylingClasses]}
+>
+  <slot />
+</Htmlheading>
