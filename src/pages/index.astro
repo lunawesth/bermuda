@@ -3,10 +3,21 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
+import Breaker from "../components/Breaker.astro";
+import HeroBody from "../components/Hero-body.astro";
 ---
 
 <MainLayout title="Frontpage">
   <!-- <Heading htmlheading="h1" size="xlarge" weight="regular"> Hello </Heading>
   <Text variant="bodybold">Test</Text>
   <Button variant="default">services</Button> -->
+  <Breaker
+    titleTop="Tekst?"
+    titleBottom="Tekst, tekst tekst tekst."
+    text="knap"
+  />
+  <HeroBody
+    title="Lorem ipsum"
+    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor."
+  />
 </MainLayout>

@@ -1,0 +1,12 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+const { title, text } = Astro.props;
+---
+
+<div class="px-gutter lg:px-xl grid lg:grid-cols-2 lg:gap-gutter">
+  <Heading htmlheading="h2" size="xxlarge" stylingclasses="">{title}</Heading>
+  <div class="pt-gutter lg:pt-lg">
+    <Text htmlheading="h3" variant="base" wrapperClasses="">{text}</Text>
+  </div>
+</div>
