@@ -1,15 +1,13 @@
 ---
 import Heading from "./Heading.astro";
 import Button from "./Button.astro";
-const { titleTop, titleBottom, text } = Astro.props;
+const { titleTop, titleBottom, text, link } = Astro.props;
 ---
 
 <div class="py-xl px-gutter lg:py-4xl lg:px-xl">
-  <div class="pb-md lg:pb-xl">
-    <Heading htmlheading="h2" size="large">
-      <span class="block">{titleTop}</span>
-      <span class="block">{titleBottom}</span>
-    </Heading>
-  </div>
-  <Button variant="default">{text}</Button>
+  <Heading htmlheading="h2" size="large" stylingclasses="pb-md lg:pb-xl">
+    <span class="block">{titleTop}</span>
+    <span class="block">{titleBottom}</span>
+  </Heading>
+  <Button href={link}>{text}</Button>
 </div>

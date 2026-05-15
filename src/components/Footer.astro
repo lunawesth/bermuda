@@ -1,9 +1,10 @@
 ---
+import Border from "./Border.astro";
 import Text from "./Text.astro";
 import Link from "./Link.astro";
 ---
 
-<div class="border-t-2 border-primary"></div>
+<Border />
 <section class="pt-3xl pb-2xl lg:pt-5xl lg:pb-4xl px-gutter lg:px-xl">
   <div class="flex justify-end h-40">
     <Link href="#" class="inline-block">
@@ -12,11 +13,11 @@ import Link from "./Link.astro";
   </div>
   <section class="lg:flex lg:flex-row lg:justify-between">
     <div class="flex flex-col pt-2xl gap-sm items-start lg:pt-0">
-      <Link href="#" variant="footer">work</Link>
-      <Link href="#" variant="footer">branded content</Link>
-      <Link href="#" variant="footer">services</Link>
-      <Link href="#" variant="footer">about</Link>
-      <Link href="#" variant="footer">contact</Link>
+      <Link href="work" variant="footer">work</Link>
+      <Link href="branded-content" variant="footer">branded content</Link>
+      <Link href="services" variant="footer">services</Link>
+      <Link href="about" variant="footer">about</Link>
+      <Link href="contact" variant="footer">contact</Link>
     </div>
     <div
       class="flex lg:justify-end pt-xl lg:pb-0 lg:items-end lg:pt-4xl lg:text-right"

@@ -1,0 +1,29 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Textcols from "../components/Textcols.astro";
+import Heading from "../components/Heading.astro";
+import Border from "../components/Border.astro";
+import Breaker from "../components/Breaker.astro";
+---
+
+<MainLayout title="Branded Content">
+  <Textcols title="Branded Content" textVers={2}
+    ><Heading size="small"
+      >We are a group of hands-on, hardworking visual storytellers, who love
+      what we do and take pride in creating strong, dedicated and shareworthy
+      branded content for all our clients, large or small. We know that the best
+      results come from a close dialogue and cooperation with the people we work
+      for, and we always aim to please! With each and every production, we go
+      over and above to make our clients’ wishes become a reality.</Heading
+    ></Textcols
+  >
+  <Border />
+  <Border />
+  <Breaker
+    titleTop="Want to see more?"
+    titleBottom="Check out our Productions."
+    link="work"
+    text="see more"
+  />
+  <Border />
+</MainLayout>

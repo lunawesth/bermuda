@@ -1,0 +1,39 @@
+---
+import Heading from "./Heading.astro";
+const {number = "false", title, textVers = 1 } = Astro.props;
+---
+
+<div class="px-gutter lg:px-xl pb-3xl lg:pb-4xl">
+  <div
+    class={textVers === 2
+      ? "gap-gutter lg:col-span-2 grid lg:grid-cols-2"
+      : textVers === 3
+        ? "gap-gutter col-span-2 grid grid-cols-4 lg:grid-cols-12"
+        : "lg:col-span-2"}
+  >
+    {
+      textVers !== 3 && title !== "false" && (
+        <Heading htmlheading="h2" size="xxlarge" stylingclasses="">
+          {title}
+        </Heading>
+        <div class="pt-gutter lg:pt-2xl"><slot /></div>
+      )
+    }
+
+    <!-- Heading kun for textVers 3 -->
+    {
+      textVers === 3 && (
+         <div class="col-start-1 col-end-2 lg:col-start-6 lg:col-end-7"> {number !== "false" && (<Heading htmlheading="h2" size="large" stylingclasses="">
+            {number}</Heading>)}</div>
+            <div class="col-start-2 col-end-5 lg:col-start-7 lg:col-end-13"> 
+          <Heading htmlheading="h3" size="large">
+            {title}
+          </Heading>
+          <div class="pt-sm lg:pt-gutter"><slot /></div>
+        </div>
+      )
+    }
+
+    
+  </div>
+</div>

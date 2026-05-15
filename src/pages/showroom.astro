@@ -1,0 +1,136 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Breaker from "../components/Breaker.astro";
+import Textcols from "../components/Textcols.astro";
+import Card from "../components/Card.astro";
+---
+
+<MainLayout title="Frontpage">
+  <Breaker
+    titleTop="Tekst?"
+    titleBottom="Tekst, tekst tekst tekst."
+    text="knap"
+  />
+  <div class="pb-5xl"></div>
+  <Textcols title="About" textVers={1}
+    ><Heading size="medium"
+      >We produce beautiful, emotionally, compelling, shareworthy content for
+      forward thinking broadcasters and their viewers nationally and worldwide.
+      We specialize in working close to our customers and take their word and
+      wishes seriously. We pride ourselves to be delivering a responsive and
+      individualized approach to every production.</Heading
+    ></Textcols
+  >
+  <div class="pb-5xl"></div>
+  <Textcols title="Branded Content" textVers={2}
+    ><Heading size="xsmall"
+      >We produce beautiful, emotionally, compelling, shareworthy content for
+      forward thinking broadcasters and their viewers nationally and worldwide.
+      We specialize in working close to our customers and take their word and
+      wishes seriously. We pride ourselves to be delivering a responsive and
+      individualized approach to every production.</Heading
+    ></Textcols
+  >
+  <div class="pb-5xl"></div>
+  <Textcols number="1" title="Development" textVers={3}>
+    <Heading size="xsmall"
+      >Development is where ideas are welcomed and shaped together. No thought
+      is too small, and every idea is taken seriously as we work closely to find
+      the right story and direction.</Heading
+    ></Textcols
+  >
+  <div class="pb-5xl"></div>
+  <div
+    class="grid grid-cols-2 gap-sm px-gutter lg:grid-cols-4 lg:px-xl lg:gap-gutter"
+  >
+    <Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    />
+    <Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    /><Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    /><Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    /><Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    /><Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    />
+  </div>
+
+  <div class="pb-5xl"></div>
+
+  <div class="px-gutter lg:gap-gutter lg:px-xl grid grid-cols-4 lg:grid-cols-3">
+    <div class="col-span-3 lg:col-span-1 lg:col-start-2 lg:col-end-3">
+      <Card
+        image="/placeholder-2.png"
+        descr="Placeholder image"
+        text="Lorem ipsum dolor sit amet."
+      />
+    </div>
+    <div class="col-span-3 lg:col-span-1 lg:col-start-3 lg:col-end-4">
+      <Card
+        image="/placeholder-2.png"
+        descr="Placeholder image"
+        text="Lorem ipsum dolor sit amet."
+      />
+    </div><div class="col-span-3 lg:col-span-1 lg:col-start-2 lg:col-end-3">
+      <Card
+        image="/placeholder-2.png"
+        descr="Placeholder image"
+        text="Lorem ipsum dolor sit amet."
+      />
+    </div><div class="col-span-3 lg:col-span-1 lg:col-start-3 lg:col-end-4">
+      <Card
+        image="/placeholder-2.png"
+        descr="Placeholder image"
+        text="Lorem ipsum dolor sit amet."
+      />
+    </div>
+    <div class="col-span-3 lg:col-span-1 lg:col-start-3 lg:col-end-4">
+      <Card
+        image="/placeholder-2.png"
+        descr="Placeholder image"
+        text="Lorem ipsum dolor sit amet."
+      />
+    </div>
+  </div>
+
+  <div class="pb-5xl"></div>
+
+  <div
+    class="gap-sm lg:gap-gutter px-gutter lg:px-xl grid grid-cols-2 lg:grid-cols-4"
+  >
+    <Card
+      image="/placeholder-3.png"
+      descr="Placeholder image"
+      text="Lorem ipsum"
+    /><Card
+      image="/placeholder-3.png"
+      descr="Placeholder image"
+      text="Lorem ipsum"
+    /><Card
+      image="/placeholder-3.png"
+      descr="Placeholder image"
+      text="Lorem ipsum"
+    /><Card
+      image="/placeholder-3.png"
+      descr="Placeholder image"
+      text="Lorem ipsum"
+    />
+  </div>
+</MainLayout>

@@ -1,0 +1,56 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Textcols from "../components/Textcols.astro";
+import Heading from "../components/Heading.astro";
+import Border from "../components/Border.astro";
+import Starhover from "../components/Starhover.astro";
+---
+
+<MainLayout title="Our-services">
+  <Textcols title="Our Sevices" textVers={2}
+    ><Heading size="small"
+      >We’re a passionate team of storytellers, working closely together across
+      every stage of a production. With everything in-house, we bring ideas to
+      life through strong collaboration, care and a shared drive to create
+      meaningful, high-quality content.</Heading
+    ></Textcols
+  >
+  <Border />
+  <section class="pt-2xl lg:pt-5xl">
+    <Textcols number="1" title="Development" textVers={3}>
+      <Heading size="xsmall"
+        >Development is where ideas are welcomed and shaped together. No thought
+        is too small, and every idea is taken seriously as we work closely to
+        find the right story and direction.</Heading
+      ></Textcols
+    ><Textcols number="2" title="Production" textVers={3}>
+      <Heading size="xsmall"
+        >Production is where everything comes together. We work closely as a
+        team to bring ideas to life, creating a calm and collaborative space
+        where everyone plays a part in shaping the final result.</Heading
+      ></Textcols
+    ><Textcols number="3" title="Editing" textVers={3}>
+      <Heading size="xsmall"
+        >Editing is where the story finds its final form. We carefully select,
+        refine and shape each moment, bringing clarity, rhythm and emotion to
+        the finished production.</Heading
+      ></Textcols
+    >
+    <div class="grid lg:grid-cols-3">
+      <div class="lg:col-start-1 lg:col-end-4 lg:row-start-1">
+        <Textcols number="4" title="Delivery" textVers={3}>
+          <Heading size="xsmall">
+            Delivery is the final step, where the project is handed over and
+            ready to be shared. We make sure everything is prepared, feels
+            right, and reaches the audience just as it should.
+          </Heading>
+        </Textcols>
+      </div>
+
+      <!-- Starhover optager 1 kolonne -->
+      <div class="lg:col-end-2 lg:row-start-1 pl-gutter lg:pl-xl">
+        <Starhover />
+      </div>
+    </div>
+  </section>
+</MainLayout>

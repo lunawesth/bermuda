@@ -1,133 +1,57 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
 import Breaker from "../components/Breaker.astro";
-import HeroBody from "../components/Hero-body.astro";
-import Card from "../components/Card.astro";
+import Border from "../components/Border.astro";
+import Starhover from "../components/Starhover.astro";
 ---
 
 <MainLayout title="Frontpage">
-  <!-- <Heading htmlheading="h1" size="xlarge" weight="regular"> Hello </Heading>
-  <Text variant="bodybold">Test</Text>
-  <Button variant="default">services</Button> -->
-  <Breaker
-    titleTop="Tekst?"
-    titleBottom="Tekst, tekst tekst tekst."
-    text="knap"
-  />
-  <div class="pb-5xl"></div>
-  <HeroBody title="Lorem ipsum" textVers={1}
-    ><Heading size="medium"
-      >We produce beautiful, emotionally, compelling, shareworthy content for
-      forward thinking broadcasters and their viewers nationally and worldwide.
-      We specialize in working close to our customers and take their word and
-      wishes seriously. We pride ourselves to be delivering a responsive and
-      individualized approach to every production.</Heading
-    ></HeroBody
-  >
-  <div class="pb-5xl"></div>
-  <HeroBody title="Lorem ipsum" textVers={2}
-    ><Heading size="xsmall"
-      >We produce beautiful, emotionally, compelling, shareworthy content for
-      forward thinking broadcasters and their viewers nationally and worldwide.
-      We specialize in working close to our customers and take their word and
-      wishes seriously. We pride ourselves to be delivering a responsive and
-      individualized approach to every production.</Heading
-    ></HeroBody
-  >
-  <div class="pb-5xl"></div>
-  <div
-    class="grid grid-cols-2 gap-sm px-gutter lg:grid-cols-4 lg:px-xl lg:gap-gutter"
-  >
-    <Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    />
-    <Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    /><Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    /><Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    /><Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    /><Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    />
-  </div>
-
-  <div class="pb-5xl"></div>
-
-  <div class="px-gutter lg:gap-gutter lg:px-xl grid grid-cols-4 lg:grid-cols-3">
-    <div class="col-span-3 lg:col-span-1 lg:col-start-2 lg:col-end-3">
-      <Card
-        image="/placeholder-2.png"
-        descr="Placeholder image"
-        text="Lorem ipsum dolor sit amet."
-      />
+  <section class="px-gutter lg:px-xl grid grid-cols-2 lg:grid-cols-4">
+    <div class="col-span-2 pb-3xl lg:col-span-3">
+      <Heading htmlheading="h1" size="xlarge"
+        >We create engaging content across news, lifestyle and reality, from
+        documentaries to high-end campaigns.</Heading
+      >
     </div>
-    <div class="col-span-3 lg:col-span-1 lg:col-start-3 lg:col-end-4">
-      <Card
-        image="/placeholder-2.png"
-        descr="Placeholder image"
-        text="Lorem ipsum dolor sit amet."
-      />
-    </div><div class="col-span-3 lg:col-span-1 lg:col-start-2 lg:col-end-3">
-      <Card
-        image="/placeholder-2.png"
-        descr="Placeholder image"
-        text="Lorem ipsum dolor sit amet."
-      />
-    </div><div class="col-span-3 lg:col-span-1 lg:col-start-3 lg:col-end-4">
-      <Card
-        image="/placeholder-2.png"
-        descr="Placeholder image"
-        text="Lorem ipsum dolor sit amet."
-      />
+    <div class="row-end-3">
+      <img src="/arrow.png" alt="Pil ned" class="h-25" />
     </div>
-    <div class="col-span-3 lg:col-span-1 lg:col-start-3 lg:col-end-4">
-      <Card
-        image="/placeholder-2.png"
-        descr="Placeholder image"
-        text="Lorem ipsum dolor sit amet."
-      />
+    <div class="pb-4xl row-end-3 lg:col-start-4">
+      <div>
+        <Text variant="bodybold" stylingclasses="pb-sm lg:pb-xl"
+          >A Copenhagen based full-service creative production company.</Text
+        >
+      </div>
+      <Button href="about">about us</Button>
     </div>
-  </div>
-
-  <div class="pb-5xl"></div>
-
-  <div
-    class="gap-sm lg:gap-gutter px-gutter lg:px-xl grid grid-cols-2 lg:grid-cols-4"
-  >
-    <Card
-      image="/placeholder-3.png"
-      descr="Placeholder image"
-      text="Lorem ipsum"
-    /><Card
-      image="/placeholder-3.png"
-      descr="Placeholder image"
-      text="Lorem ipsum"
-    /><Card
-      image="/placeholder-3.png"
-      descr="Placeholder image"
-      text="Lorem ipsum"
-    /><Card
-      image="/placeholder-3.png"
-      descr="Placeholder image"
-      text="Lorem ipsum"
+  </section>
+  <section>
+    <img src="/placeholder-video.png" alt="Video af Bermudas programmer" />
+    <Breaker
+      titleTop="Curious?"
+      titleBottom="Well, check out our work."
+      link="work"
+      text="see more"
     />
-  </div>
+  </section>
+  <Border />
+  <section class="px-gutter lg:px-xl pt-3xl lg:py-5xl pb-2xl">
+    <div class="grid lg:grid-cols-2">
+      <Heading
+        htmlheading="h2"
+        size="xxlarge"
+        stylingclasses="pb-gutter lg:pb-lg">Our services</Heading
+      >
+      <Text variant="bodybold" stylingclasses="pb-md"
+        >We're a passionate and dedicated team that approaches every project
+        with the same energy and care, no matter the scale, always striving to
+        create meaningful and engaging productions together.</Text
+      >
+      <Button href="services">read more</Button>
+    </div>
+    <Starhover />
+  </section>
 </MainLayout>
