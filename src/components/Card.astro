@@ -1,0 +1,11 @@
+---
+import Heading from "./Heading.astro";
+
+const { image, descr, text } = Astro.props;
+---
+
+<div class="pb-xl lg:pb-3xl">
+  <img src={image} alt={descr} class="pb-sm lg:pb-gutter" />
+
+  <Heading htmlheading="h2" size="xsmall">{text}</Heading>
+</div>

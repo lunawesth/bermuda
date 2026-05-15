@@ -1,12 +1,22 @@
 ---
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
-const { title, text } = Astro.props;
+const { title, textVers = 1 } = Astro.props;
 ---
 
-<div class="px-gutter lg:px-xl grid lg:grid-cols-2 lg:gap-gutter">
+<!-- <div class="px-gutter lg:px-xl grid lg:grid-cols-2 lg:gap-gutter">
   <Heading htmlheading="h2" size="xxlarge" stylingclasses="">{title}</Heading>
   <div class="pt-gutter lg:pt-lg">
     <Text htmlheading="h3" variant="base" wrapperClasses="">{text}</Text>
+  </div>
+</div> -->
+<div class="px-gutter lg:px-xl">
+  <div
+    class={textVers === 2
+      ? "gap-gutter lg:col-span-2 grid lg:grid-cols-2"
+      : "lg:col-span-2"}
+  >
+    <Heading htmlheading="h2" size="xxlarge" stylingclasses="">{title}</Heading>
+    <div class="pt-gutter lg:pt-2xl"><slot /></div>
   </div>
 </div>
