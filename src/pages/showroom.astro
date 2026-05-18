@@ -4,9 +4,20 @@ import Heading from "../components/Heading.astro";
 import Breaker from "../components/Breaker.astro";
 import Textcols from "../components/Textcols.astro";
 import Card from "../components/Card.astro";
+
+const curl = "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*";
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc";
+const options = {
+  headers: {
+    apikey,
+  },
+};
+const data = await fetch(curl, options).then((res) => res.json());
+console.log(data);
 ---
 
-<MainLayout title="Frontpage">
+<MainLayout title="Showroom">
   <Breaker
     titleTop="Tekst?"
     titleBottom="Tekst, tekst tekst tekst."
@@ -44,16 +55,9 @@ import Card from "../components/Card.astro";
   <div
     class="grid grid-cols-2 gap-sm px-gutter lg:grid-cols-4 lg:px-xl lg:gap-gutter"
   >
-    <Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    />
-    <Card
-      image="/placeholder.jpg"
-      descr="Placeholder image"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    /><Card
+    {data.map((card) => <Card data={card} />)}
+
+    <!-- <Card
       image="/placeholder.jpg"
       descr="Placeholder image"
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -69,14 +73,18 @@ import Card from "../components/Card.astro";
       image="/placeholder.jpg"
       descr="Placeholder image"
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    />
+    /><Card
+      image="/placeholder.jpg"
+      descr="Placeholder image"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    /> -->
   </div>
 
   <div class="pb-5xl"></div>
 
   <div class="px-gutter lg:gap-gutter lg:px-xl grid grid-cols-4 lg:grid-cols-3">
     <div class="col-span-3 lg:col-span-1 lg:col-start-2 lg:col-end-3">
-      <Card
+      <!-- <Card
         image="/placeholder-2.png"
         descr="Placeholder image"
         text="Lorem ipsum dolor sit amet."
@@ -106,7 +114,7 @@ import Card from "../components/Card.astro";
         image="/placeholder-2.png"
         descr="Placeholder image"
         text="Lorem ipsum dolor sit amet."
-      />
+      /> -->
     </div>
   </div>
 
@@ -115,7 +123,7 @@ import Card from "../components/Card.astro";
   <div
     class="gap-sm lg:gap-gutter px-gutter lg:px-xl grid grid-cols-2 lg:grid-cols-4"
   >
-    <Card
+    <!-- <Card
       image="/placeholder-3.png"
       descr="Placeholder image"
       text="Lorem ipsum"
@@ -131,6 +139,6 @@ import Card from "../components/Card.astro";
       image="/placeholder-3.png"
       descr="Placeholder image"
       text="Lorem ipsum"
-    />
+    /> -->
   </div>
 </MainLayout>

@@ -4,6 +4,8 @@ const {
   size = "medium",
   weight = "regular",
   stylingclasses = "",
+  wrapperClasses = "",
+  animate = true,
 } = Astro.props;
 
 const Htmlheading = htmlheading;
@@ -25,8 +27,46 @@ const baseTextColor = "text-default";
 const mergedStylingClasses = `${baseTextColor} ${stylingclasses ?? ""}`;
 ---
 
-<Htmlheading
-  class:list={[sizeClasses[size], weightClasses[weight], mergedStylingClasses]}
->
-  <slot />
-</Htmlheading>
+<div class={wrapperClasses}>
+  <div class={`heading-animation ${animate ? "" : "is-visible"}`}>
+    <Htmlheading
+      class:list={[
+        sizeClasses[size],
+        weightClasses[weight],
+        mergedStylingClasses,
+      ]}
+    >
+      <slot />
+    </Htmlheading>
+  </div>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  document.querySelectorAll(".heading-animation").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+
+<style>
+  .heading-animation {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      transform 500ms ease-out,
+      opacity 500ms ease-out;
+  }
+
+  .heading-animation.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

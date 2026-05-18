@@ -1,0 +1,40 @@
+---
+import Heading from "../components/Heading.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const curl = "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*";
+
+  const apikey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc";
+
+  const options = {
+    headers: {
+      apikey: apikey,
+    },
+  };
+
+  const response = await fetch(curl, options);
+  const data = await response.json();
+
+  return data.map((data) => {
+    return {
+      params: { id: data.id },
+      props: { data },
+    };
+  });
+}
+
+const { data } = Astro.props;
+---
+
+<MainLayout title={data.heading}>
+  <div class="px-gutter lg:px-xl py-3xl lg:py-4xl">
+    <Heading>{data.heading}</Heading>
+    <img
+      src={"/" + data.image}
+      alt={data.imgdescr}
+      class="pb-sm lg:pb-gutter"
+    />
+  </div>
+</MainLayout>

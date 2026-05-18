@@ -4,11 +4,26 @@ import Textcols from "../components/Textcols.astro";
 import Heading from "../components/Heading.astro";
 import Border from "../components/Border.astro";
 import Breaker from "../components/Breaker.astro";
+import Card from "../components/Card.astro";
+
+//https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc
+
+const curl = "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*";
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc";
+const options = {
+  headers: {
+    apikey,
+  },
+};
+const data = await fetch(curl, options).then((res) => res.json());
+console.log(data);
 ---
 
 <MainLayout title="Work">
   <Textcols title="Work" textVers={2}
-    ><Heading size="small"
+    ><Heading size="xsmall"
       >We produce beautiful, emotionally, compelling, shareworthy content for
       forward thinking broadcasters and their viewers nationally and worldwide.
       We specialize in working close to our customers and take their word and
@@ -17,6 +32,9 @@ import Breaker from "../components/Breaker.astro";
     ></Textcols
   >
   <Border />
+  <section class="grid grid-cols-2 lg:grid-cols-4">
+    {data.map((card) => <Card data={card} />)}
+  </section>
   <Border />
   <Breaker
     titleTop="Want to see more?"

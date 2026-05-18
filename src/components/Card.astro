@@ -1,6 +1,25 @@
 ---
 import Heading from "./Heading.astro";
 
+const { data } = Astro.props;
+---
+
+<section class="pb-xl lg:pb-3xl">
+  <a href={`/${data.id}`}>
+    <img
+      src={"/" + data.image}
+      alt={data.imgdescr}
+      class="pb-sm lg:pb-gutter"
+    />
+    <Heading htmlheading="h2" size="xsmall">
+      {data.heading}
+    </Heading>
+  </a>
+</section>
+
+<!-- ---
+import Heading from "./Heading.astro";
+
 const { image, descr, text } = Astro.props;
 ---
 
@@ -8,4 +27,4 @@ const { image, descr, text } = Astro.props;
   <img src={image} alt={descr} class="pb-sm lg:pb-gutter" />
 
   <Heading htmlheading="h2" size="xsmall">{text}</Heading>
-</div>
+</div> -->

@@ -18,6 +18,9 @@
   --spacing-3xl: 96px;
   --spacing-4xl: 128px;
   --spacing-5xl: 192px;
+
+  /*custom cursor*/
+  --cursor: url(/cursor.svg) 5 5, pointer;
 }
 
 @layer base {
@@ -69,6 +72,10 @@
 
   .text-dark {
     color: var(--color-secondary);
+  }
+
+  * {
+    @apply cursor-(--cursor);
   }
 }
 

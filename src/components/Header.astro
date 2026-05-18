@@ -7,36 +7,39 @@ import Link from "./Link.astro";
   rel="stylesheet"
 />
 
-<section>
+<section class="fixed top-0 left-0 w-full z-10">
   <!-- grøn top -->
   <div class="bg-nav-green pt-lg"></div>
 
   <!-- navbar -->
   <div
-    class="bg-nav pt-md pb-xl lg:pt-gutter lg:pb-3xl flex items-center justify-between pl-md pr-lg"
+    class="bg-nav pt-md lg:pt-gutter flex items-center justify-between pl-md pr-lg"
   >
     <!-- logo -->
-    <div class="relative">
-      <!-- Sort logo (standard) -->
-      <img
-        id="logo-black"
-        src="/logo.png"
-        alt="Bermuda logo"
-        class="h-8.25 md:h-12"
-      />
-      <!-- Hvidt logo (skjult som standard) -->
-      <img
-        id="logo-white"
-        src="/logo-white.png"
-        alt="Bermuda logo"
-        class="h-8.25 md:h-12 z-50 hidden"
-      />
-    </div>
+    <span>
+      <a href="/">
+        <div class="relative">
+          <!-- Sort logo (standard) -->
+          <img
+            id="logo-black"
+            src="/logo.png"
+            alt="Bermuda logo"
+            class="h-8.25 md:h-12"
+          />
+          <!-- Hvidt logo (skjult som standard) -->
+          <img
+            id="logo-white"
+            src="/logo-white.png"
+            alt="Bermuda logo"
+            class="h-8.25 md:h-12 z-100 hidden"
+          />
+        </div>
+      </a>
+    </span>
 
     <!-- desktop menu -->
     <div class="hidden lg:block">
       <ul class="flex flex-row gap-2xl">
-        <li><Link href="/" variant="menu">frontpage</Link></li>
         <li><Link href="work" variant="menu">work</Link></li>
         <li>
           <Link href="branded-content" variant="menu">branded content</Link>
