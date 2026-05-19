@@ -2,14 +2,103 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Textcols from "../components/Textcols.astro";
 import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+import Starhover from "../components/Starhover.astro";
+
+const items = [
+  { type: "image", src: "/about-1.webp", alt: "Stemningsbillede fra Bermuda." },
+  { type: "image", src: "/about-2.webp", alt: "Stemningsbillede fra Bermuda." },
+  { type: "image", src: "/about-3.webp", alt: "Stemningsbillede fra Bermuda." },
+  { empty: true },
+  { type: "component" },
+  { type: "image", src: "/about-4.webp", alt: "Stemningsbillede fra Bermuda." },
+  { type: "image", src: "/about-5.webp", alt: "Stemningsbillede fra Bermuda." },
+  { type: "image", src: "/about-6.webp", alt: "Stemningsbillede fra Bermuda." },
+];
 ---
 
 <MainLayout title="About">
   <Textcols title="About" textVers={1}>
-    <Heading size="medium">
+    <Heading htmlheading="h2" size="medium">
       We’re based in the heart of Copenhagen on Nørrebro, tucked away in a
       charming courtyard on Kapelvej – an older, characterful space, bringing
       together more than 70 talented people.</Heading
     >
   </Textcols>
+  <section
+    class="px-gutter lg:px-xl grid lg:grid-cols-12 lg:grid-rows-2 pb-4xl"
+  >
+    <div class="lg:col-start-9 lg:col-end-13 lg:row-span-2">
+      <img src="/gaard.webp" alt="Billede af Bermudas gård." />
+    </div>
+    <Text
+      version="body"
+      stylingclasses="pb-md lg:pb-gutter pt-lg lg:pt-0 lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-2 lg:place-content-end"
+    >
+      We are a group of hands-on, hardworking visual storytellers, who love what
+      we do and take pride in creating strong, dedicated and shareworthy branded
+      content for all our clients, large or small.
+      <br /><br />
+      We know that the best results come from a close dialogue and cooperation with
+      the people we work for, and we always aim to please! With each and every production,
+      we go over and above to make our clients wishes become a reality.
+    </Text>
+    <div class="lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3">
+      <Text stylingclasses="pb-md lg:pb-lg"
+        >You are always very welcome to visit us at our office on Nørrebro at
+        Kapelvej.</Text
+      >
+      <Button href="contact">contact us</Button>
+    </div>
+  </section>
+  <section class="px-gutter lg:px-xl pb-5xl lg:grid lg:grid-cols-12 lg:gap-lg">
+    <!-- Venstre kolonne -->
+    <div class="lg:col-span-2">
+      <Text variant="bodybold">Malene Eikers</Text>
+
+      <Text variant="body" stylingclasses="pb-sm"> Producer & Partner </Text>
+    </div>
+
+    <!-- Højre kolonne -->
+    <div class="lg:col-span-10">
+      <Heading htmlheading="h2" size="medium">
+        “We’ve built a place where strong ideas and great people come together
+        to create something we are all proud of. And where everyone shares the
+        same passion for telling meaningful stories.”
+      </Heading>
+    </div>
+  </section>
+
+  <section class="px-gutter lg:px-xl pb-5xl">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+      {
+        items.map((item) => {
+          if (item.type === "component") {
+            return (
+              <div class="flex items-center justify-center">
+                <Starhover />
+              </div>
+            );
+          }
+
+          return (
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src={item.src} alt="" class="w-full h-auto" />
+            </div>
+          );
+        })
+      }
+    </div>
+    <div class="grid lg:grid-cols-12">
+      <Text
+        variant="body"
+        stylingclasses="pt-lg lg:pt-gutter lg:col-start-4 lg:col-end-8"
+        >Bermuda Production is a close-knit and welcoming workplace, where
+        people work side by side across the entire process. With everything
+        in-house, ideas grow naturally from early thoughts to finished
+        productions, shaped by the same team all the way through.</Text
+      >
+    </div>
+  </section>
 </MainLayout>

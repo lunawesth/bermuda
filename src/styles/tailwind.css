@@ -77,6 +77,10 @@
   * {
     @apply cursor-(--cursor);
   }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+  }
 }
 
 @layer components {

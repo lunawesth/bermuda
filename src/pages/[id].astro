@@ -1,6 +1,9 @@
 ---
 import Heading from "../components/Heading.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Text from "../components/Text.astro";
+import Starhover from "../components/Starhover.astro";
+import Button from "../components/Button.astro";
 
 export async function getStaticPaths() {
   const curl = "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*";
@@ -29,12 +32,28 @@ const { data } = Astro.props;
 ---
 
 <MainLayout title={data.heading}>
-  <div class="px-gutter lg:px-xl py-3xl lg:py-4xl">
-    <Heading>{data.heading}</Heading>
-    <img
-      src={"/" + data.image}
-      alt={data.imgdescr}
-      class="pb-sm lg:pb-gutter"
-    />
+  <div class="px-gutter lg:px-xl">
+    <div class="pb-4xl lg:pb-5xl">
+      <Heading htmlheading="h2" size="xs" stylingclasses="pb-lg text-center"
+        >{data.heading}</Heading
+      >
+      <Heading htmlheading="h3" size="medium" stylingclasses="text-center pb-xl"
+        >{data.descrheader}</Heading
+      >
+      <img
+        src={"/" + data.image}
+        alt={data.imgdescr}
+        class="pb-sm lg:pb-gutter"
+      />
+      <div class="pb-xl">
+        <Starhover />
+      </div>
+      <Text>{data.descrbody}</Text>
+    </div>
+    <Text stylingclasses="text-center pb-sm">Trailer</Text>
+  </div>
+  <img src="/placeholder-video.png" alt="Trailer." />
+  <div class="pt-xl pb-2xl lg:pt-3xl lg:pb-4xl px-gutter lg:px-xl">
+    <Button onclick="history.back()">go back</Button>
   </div>
 </MainLayout>

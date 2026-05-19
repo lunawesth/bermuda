@@ -9,7 +9,8 @@ import Card from "../components/Card.astro";
 //https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc
 
-const curl = "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*";
+const curl =
+  "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*&category=eq.work";
 const apikey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc";
 const options = {
@@ -32,7 +33,7 @@ console.log(data);
     ></Textcols
   >
   <Border />
-  <section class="grid grid-cols-2 lg:grid-cols-4">
+  <section class="grid grid-cols-2 lg:grid-cols-4 gap-sm">
     {data.map((card) => <Card data={card} />)}
   </section>
   <Border />

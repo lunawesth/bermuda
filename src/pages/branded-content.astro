@@ -4,6 +4,19 @@ import Textcols from "../components/Textcols.astro";
 import Heading from "../components/Heading.astro";
 import Border from "../components/Border.astro";
 import Breaker from "../components/Breaker.astro";
+import Card from "../components/Card.astro";
+
+const curl =
+  "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*&category=eq.branded-content";
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc";
+const options = {
+  headers: {
+    apikey,
+  },
+};
+const data = await fetch(curl, options).then((res) => res.json());
+console.log(data);
 ---
 
 <MainLayout title="Branded Content">
@@ -18,6 +31,13 @@ import Breaker from "../components/Breaker.astro";
     ></Textcols
   >
   <Border />
+  <section
+    class="grid grid-cols-4 lg:grid-cols-3 py-2xl lg:py-5xl px-gutter lg:px-xl"
+  >
+    <div class="col-span-3 lg:col-span-1">
+      {data.map((card) => <Card data={card} />)}
+    </div>
+  </section>
   <Border />
   <Breaker
     titleTop="Want to see more?"
