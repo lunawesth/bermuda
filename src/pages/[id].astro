@@ -32,28 +32,40 @@ const { data } = Astro.props;
 ---
 
 <MainLayout title={data.heading}>
-  <div class="px-gutter lg:px-xl">
-    <div class="pb-4xl lg:pb-5xl">
-      <Heading htmlheading="h2" size="xs" stylingclasses="pb-lg text-center"
-        >{data.heading}</Heading
+  <Heading htmlheading="h2" size="xs" stylingclasses="pb-lg text-center">
+    {data.heading}
+  </Heading>
+  <section class="grid lg:grid-cols-12 lg:grid-rows-4 lg:auto-rows-max">
+    <div class="lg:col-start-3 lg:col-end-11 lg:row-start-1">
+      <Heading
+        htmlheading="h3"
+        size="medium"
+        stylingclasses="text-center pb-xl"
       >
-      <Heading htmlheading="h3" size="medium" stylingclasses="text-center pb-xl"
-        >{data.descrheader}</Heading
-      >
+        {data.descrheader}
+      </Heading>
+    </div>
+
+    <!-- Wrapper for image and Starhover -->
+    <div class="relative lg:col-start-4 lg:col-end-10 lg:row-start-2">
       <img
         src={"/" + data.image}
         alt={data.imgdescr}
-        class="pb-sm lg:pb-gutter"
+        class="pb-sm lg:pb-gutter w-full"
       />
-      <div class="pb-xl">
+      <!-- Starhover placed below the image -->
+      <div class="absolute bottom-0 left-0 w-full lg:static lg:pt-sm">
         <Starhover />
       </div>
+    </div>
+
+    <div class="pb-xl lg:col-start-4 lg:col-end-10 lg:row-start-3">
       <Text>{data.descrbody}</Text>
     </div>
-    <Text stylingclasses="text-center pb-sm">Trailer</Text>
-  </div>
-  <img src="/placeholder-video.png" alt="Trailer." />
-  <div class="pt-xl pb-2xl lg:pt-3xl lg:pb-4xl px-gutter lg:px-xl">
-    <Button onclick="history.back()">go back</Button>
-  </div>
+    <div class="lg:col-start-4 lg:col-end-10 lg:row-start-4">
+      <Text stylingclasses="text-center pb-sm">Trailer</Text>
+      <img src="/placeholder-video.png" alt="Trailer." />
+    </div>
+  </section>
+  <Button onclick="history.back()">go back</Button>
 </MainLayout>

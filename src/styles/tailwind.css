@@ -49,15 +49,6 @@
     background-color: var(--color-secondary);
   }
 
-  /* Button */
-  .btn-default {
-    border: solid var(--color-primary) 2px;
-  }
-
-  .btn-dark {
-    border: solid var(--color-secondary) 2px;
-  }
-
   /* Link hover*/
 
   .footer-hover:hover {

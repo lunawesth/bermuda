@@ -6,9 +6,6 @@ import Border from "../components/Border.astro";
 import Breaker from "../components/Breaker.astro";
 import Card from "../components/Card.astro";
 
-//https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtZG5va3h6dnR1YnRubXZocWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzkxOTAsImV4cCI6MjA5NDY1NTE5MH0.86hIJgtuSaa-csRd13CQtMGx65qpyYO1x0iEQanYksc
-
 const curl =
   "https://fmdnokxzvtubtnmvhqfm.supabase.co/rest/v1/card?select=*&category=eq.work";
 const apikey =
@@ -33,8 +30,35 @@ console.log(data);
     ></Textcols
   >
   <Border />
-  <section class="grid grid-cols-2 lg:grid-cols-4 gap-sm">
-    {data.map((card) => <Card data={card} />)}
+  <div
+    class="flex justify-end gap-sm lg:gap-gutter px-gutter lg:px-xl pt-md lg:pt-xl pb-2xl lg:pb-4xl"
+  >
+    <button class="filter-btn underline underline-offset-4" data-filter="tv2">
+      TV2
+    </button>
+
+    <button class="filter-btn underline underline-offset-4" data-filter="dr">
+      DR
+    </button>
+
+    <button
+      class="filter-btn underline underline-offset-4"
+      data-filter="viaplay"
+    >
+      Viaplay
+    </button>
+  </div>
+  <section
+    class="grid grid-cols-2 lg:grid-cols-4 gap-sm px-gutter lg:px-xl"
+    id="card-grid"
+  >
+    {
+      data.map((card) => (
+        <div class="card-item" data-broadcaster={card.broadcaster}>
+          <Card data={card} />
+        </div>
+      ))
+    }
   </section>
   <Border />
   <Breaker
@@ -43,5 +67,31 @@ console.log(data);
     link="branded-content"
     text="see more"
   />
-  <Border />
 </MainLayout>
+
+<script>
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".card-item");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((btn) => {
+        btn.classList.remove("font-medium");
+      });
+
+      button.classList.add("font-medium");
+
+      const filter = button.dataset.filter;
+
+      cards.forEach((card) => {
+        const broadcaster = card.dataset.broadcaster;
+
+        if (filter === "all" || broadcaster === filter) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
