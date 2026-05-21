@@ -52,6 +52,152 @@ import Starhover from "../components/Starhover.astro";
       >
       <Button href="services">read more</Button>
     </div>
-    <Starhover />
+
+    <section class="pt-2xl">
+      <div class="border-t border-primary">
+        <!-- ITEM -->
+        <div class="accordion-item border-b border-primary">
+          <button
+            class="accordion-toggle w-full flex items-center justify-between py-md text-left"
+          >
+            <span><Heading size="medium">Development</Heading></span>
+
+            <img
+              src="/arrow-2.png"
+              alt="Arrow"
+              class="accordion-arrow h-4 transition-transform duration-300"
+            />
+          </button>
+
+          <div
+            class="accordion-content grid grid-rows-[0fr] transition-all duration-300 ease-in-out"
+          >
+            <div class="overflow-hidden">
+              <Text variant="bodysmall" stylingclasses="pb-md">
+                We develop creative concepts and formats for brands and
+                broadcasters.
+              </Text>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="accordion-item border-b border-primary">
+          <button
+            class="accordion-toggle w-full flex items-center justify-between py-md text-left"
+          >
+            <span><Heading size="medium">Production</Heading></span>
+
+            <img
+              src="/arrow-2.png"
+              alt="Arrow"
+              class="accordion-arrow h-4 transition-transform duration-300"
+            />
+          </button>
+
+          <div
+            class="accordion-content grid grid-rows-[0fr] transition-all duration-300 ease-in-out"
+          >
+            <div class="overflow-hidden">
+              <Text variant="bodysmall" stylingclasses="pb-md">
+                Full scale production across documentaries, campaigns and
+                reality.
+              </Text>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="accordion-item border-b border-primary">
+          <button
+            class="accordion-toggle w-full flex items-center justify-between py-md text-left"
+          >
+            <span><Heading size="medium">Editing</Heading></span>
+
+            <img
+              src="/arrow-2.png"
+              alt="Arrow"
+              class="accordion-arrow h-4 transition-transform duration-300"
+            />
+          </button>
+
+          <div
+            class="accordion-content grid grid-rows-[0fr] transition-all duration-300 ease-in-out"
+          >
+            <div class="overflow-hidden">
+              <Text variant="bodysmall" stylingclasses="pb-md">
+                Editing, grading, sound design and final delivery.
+              </Text>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="accordion-item border-b border-primary">
+          <button
+            class="accordion-toggle w-full flex items-center justify-between py-md text-left"
+          >
+            <span><Heading size="medium">Delivery</Heading></span>
+
+            <img
+              src="/arrow-2.png"
+              alt="Arrow"
+              class="accordion-arrow h-4 transition-transform duration-300"
+            />
+          </button>
+
+          <div
+            class="accordion-content grid grid-rows-[0fr] transition-all duration-300 ease-in-out"
+          >
+            <div class="overflow-hidden">
+              <Text variant="bodysmall" stylingclasses="pb-md">
+                Strategic storytelling and creative direction tailored to
+                audiences.
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="pt-2xl">
+      <Starhover />
+    </div>
   </section>
 </MainLayout>
+
+<script>
+  const items = document.querySelectorAll(".accordion-item");
+
+  items.forEach((item) => {
+    const button = item.querySelector(".accordion-toggle");
+    const content = item.querySelector(".accordion-content");
+    const arrow = item.querySelector(".accordion-arrow");
+
+    button.addEventListener("click", () => {
+      const isOpen = content.classList.contains("grid-rows-[1fr]");
+
+      // Luk alle
+      items.forEach((otherItem) => {
+        otherItem
+          .querySelector(".accordion-content")
+          .classList.remove("grid-rows-[1fr]");
+
+        otherItem
+          .querySelector(".accordion-content")
+          .classList.add("grid-rows-[0fr]");
+
+        otherItem
+          .querySelector(".accordion-arrow")
+          .classList.remove("rotate-180");
+      });
+
+      // Åbn valgt item
+      if (!isOpen) {
+        content.classList.remove("grid-rows-[0fr]");
+        content.classList.add("grid-rows-[1fr]");
+
+        arrow.classList.add("rotate-180");
+      }
+    });
+  });
+</script>
