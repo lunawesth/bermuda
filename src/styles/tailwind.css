@@ -28,6 +28,10 @@
     font-family: "helvetica-neue-lt-pro", sans-serif;
   }
 
+  .case-font {
+    font-family: "Courier New", Courier, monospace;
+  }
+
   /* Background */
   .bg-nav {
     background-color: var(--color-secondary);
@@ -71,6 +75,10 @@
 
   .vertical-text {
     writing-mode: vertical-rl;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
