@@ -31,13 +31,23 @@ console.log(data);
     ></Textcols
   >
   <Border />
+
   <section
     class="grid grid-cols-4 lg:grid-cols-3 py-2xl lg:py-5xl px-gutter lg:px-xl"
   >
-    <div class="col-span-3 lg:col-span-1">
-      {data.map((card) => <Card data={card} />)}
+    <div class="hidden lg:block"></div>
+    <!-- Tom col 1 (skjult på mobil) -->
+    <div
+      class="col-span-3 lg:col-start-2 lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-sm lg:gap-gutter text-left [direction:rtl]"
+    >
+      {
+        data.map((card, index) => (
+          <Card data={card} aspectRatio="aspect-[16/9]" />
+        ))
+      }
     </div>
   </section>
+
   <Border />
   <Breaker
     titleTop="Want to see more?"
@@ -45,5 +55,4 @@ console.log(data);
     link="work"
     text="see more"
   />
-  <Border />
 </MainLayout>

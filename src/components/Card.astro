@@ -1,30 +1,22 @@
 ---
 import Heading from "./Heading.astro";
 
-const { data } = Astro.props;
+const { data, aspectRatio = "aspect-[4/5]" } = Astro.props;
 ---
 
-<section class="pb-xl lg:pb-3xl">
-  <a href={`/${data.id}`}>
-    <img
-      src={"/" + data.image}
-      alt={data.imgdescr}
-      class="pb-sm lg:pb-gutter"
-    />
-    <Heading htmlheading="h2" size="xsmall">
-      {data.heading}
-    </Heading>
-  </a>
+<section class="pb-md lg:pb-xl">
+  <div class={`card-item`} data-broadcaster={data.broadcaster}>
+    <a href={`/${data.id}`}>
+      <div class={`relative w-full ${aspectRatio} overflow-hidden`}>
+        <img
+          src={"/" + data.image}
+          alt={data.imgdescr}
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+      <Heading htmlheading="h2" size="xsmall" stylingclasses="pt-sm lg:pt-md">
+        {data.heading}
+      </Heading>
+    </a>
+  </div>
 </section>
-
-<!-- ---
-import Heading from "./Heading.astro";
-
-const { image, descr, text } = Astro.props;
----
-
-<div class="pb-xl lg:pb-3xl">
-  <img src={image} alt={descr} class="pb-sm lg:pb-gutter" />
-
-  <Heading htmlheading="h2" size="xsmall">{text}</Heading>
-</div> -->

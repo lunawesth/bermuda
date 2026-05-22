@@ -32,40 +32,54 @@ const { data } = Astro.props;
 ---
 
 <MainLayout title={data.heading}>
-  <Heading htmlheading="h2" size="xs" stylingclasses="pb-lg text-center">
+  <Heading
+    htmlheading="h2"
+    size="xs"
+    weight="bold"
+    stylingclasses="pb-lg text-center case-font"
+  >
     {data.heading}
   </Heading>
-  <section class="grid lg:grid-cols-12 lg:grid-rows-4 lg:auto-rows-max">
-    <div class="lg:col-start-3 lg:col-end-11 lg:row-start-1">
+  <section class="grid lg:grid-cols-6">
+    <div class="lg:col-start-2 lg:col-end-6">
       <Heading
         htmlheading="h3"
         size="medium"
-        stylingclasses="text-center pb-xl"
+        stylingclasses="text-center pb-xl case-font"
       >
         {data.descrheader}
       </Heading>
     </div>
+  </section>
 
-    <!-- Wrapper for image and Starhover -->
-    <div class="relative lg:col-start-4 lg:col-end-10 lg:row-start-2">
+  <section class="relative mb-3xl lg:mb-0 grid lg:grid-cols-4">
+    <div class="px-gutter lg:col-start-2 lg:col-end-4">
       <img
         src={"/" + data.image}
         alt={data.imgdescr}
         class="pb-sm lg:pb-gutter w-full"
       />
-      <!-- Starhover placed below the image -->
-      <div class="absolute bottom-0 left-0 w-full lg:static lg:pt-sm">
-        <Starhover />
-      </div>
     </div>
 
-    <div class="pb-xl lg:col-start-4 lg:col-end-10 lg:row-start-3">
-      <Text>{data.descrbody}</Text>
+    <div
+      class="px-gutter absolute -bottom-2xl w-full lg:static lg:pt-sm lg:col-start-4 lg:col-end-5 lg:pl-4xl"
+    >
+      <Starhover />
     </div>
-    <div class="lg:col-start-4 lg:col-end-10 lg:row-start-4">
-      <Text stylingclasses="text-center pb-sm">Trailer</Text>
+  </section>
+  <section class="grid lg:grid-cols-4">
+    <div class="px-gutter pb-4xl lg:col-start-2 lg:col-end-4">
+      <Text stylingclasses="case-font">{data.descrbody}</Text>
+    </div>
+  </section>
+  <section class="grid lg:grid-cols-6">
+    <div class="pb-gutter lg:pb-3xl lg:col-start-2 lg:col-end-6">
+      <Text stylingclasses="text-center pb-sm case-font font-bold">Trailer</Text
+      >
       <img src="/placeholder-video.png" alt="Trailer." />
     </div>
   </section>
-  <Button onclick="history.back()">go back</Button>
+  <div class="px-gutter lg:px-xl pb-2xl lg:pb-4xl">
+    <Button onclick="history.back()">go back</Button>
+  </div>
 </MainLayout>
