@@ -21,11 +21,17 @@
 
   /*custom cursor*/
   --cursor: url(/cursor.svg) 5 5, pointer;
+  --cursor-hover: url(/cursor-hover.svg) 5 5, pointer;
 }
 
 @layer base {
   body {
     font-family: "helvetica-neue-lt-pro", sans-serif;
+  }
+
+  a,
+  button {
+    cursor: var(--cursor-hover); /* Skift til hover-cursor */
   }
 
   .case-font {
