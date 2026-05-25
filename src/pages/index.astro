@@ -6,9 +6,12 @@ import Button from "../components/Button.astro";
 import Breaker from "../components/Breaker.astro";
 import Border from "../components/Border.astro";
 import Starhover from "../components/Starhover.astro";
+import Loader from "../components/Loader.astro";
 ---
 
 <MainLayout title="Frontpage">
+  <Loader />
+
   <section class="px-gutter lg:px-xl grid grid-cols-2 lg:grid-cols-4">
     <div class="col-span-2 pb-3xl lg:col-span-3">
       <Heading htmlheading="h1" size="xlarge"

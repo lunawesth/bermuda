@@ -1,0 +1,58 @@
+---
+
+---
+
+<div id="loader" class="fixed inset-0 z-[9999] bg-secondary flex items-end p-8">
+  <span
+    id="loader-number"
+    class="absolute bottom-8 left-0 text-default text-[120px] md:text-[180px] font-bold leading-none"
+  >
+    0
+  </span>
+</div>
+
+<script>
+  const loader = document.querySelector("#loader");
+  const number = document.querySelector("#loader-number");
+
+  const hasLoaded = sessionStorage.getItem("loaderShown");
+
+  if (hasLoaded) {
+    loader.style.display = "none";
+  } else {
+    let count = 0;
+
+    const interval = setInterval(() => {
+      count++;
+
+      number.textContent = count;
+
+      const progress = count / 99;
+      const maxX = window.innerWidth - 250;
+
+      number.style.transform = `translateX(${progress * maxX}px)`;
+
+      if (count >= 99) {
+        clearInterval(interval);
+
+        loader.classList.add("loaded");
+
+        sessionStorage.setItem("loaderShown", "true");
+
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 900);
+      }
+    }, 20);
+  }
+</script>
+
+<style>
+  #loader {
+    transition: transform 0.8s ease-in-out;
+  }
+
+  #loader.loaded {
+    transform: translateY(-100%);
+  }
+</style>
