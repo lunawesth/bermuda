@@ -8,7 +8,11 @@ import Link from "./Link.astro";
 <section class="pt-3xl pb-xl lg:pt-3xl px-gutter lg:px-xl">
   <div class="flex justify-end h-40">
     <Link href="#" class="inline-block">
-      <img src="/arrow+text.png" alt="Pil knap" class="h-full object-contain" />
+      <img
+        src="/arrow+text.png"
+        alt="Pil knap"
+        class="h-full object-contain cursor-hover"
+      />
     </Link>
   </div>
   <section class="lg:flex lg:flex-row lg:justify-between">
@@ -30,7 +34,9 @@ import Link from "./Link.astro";
   </section>
   <section class="flex flex-row justify-between pt-3xl lg:pt-2xl">
     <div class="w-50 lg:w-100">
-      <img src="/logo.png" alt="Bermudas logo" />
+      <a href="/">
+        <img src="/logo.png" alt="Bermudas logo" class="cursor-hover" />
+      </a>
     </div>
     <div class="flex flex-row h-10 lg:h-15 gap-sm">
       <a
@@ -42,7 +48,7 @@ import Link from "./Link.astro";
         <img
           src="/facebook_logo.png"
           alt="Facebook logo"
-          class="h-full w-auto"
+          class="h-full w-auto cursor-hover"
         />
       </a>
       <a
@@ -54,7 +60,7 @@ import Link from "./Link.astro";
         <img
           src="/instagram_logo.png"
           alt="Instagram logo"
-          class="h-full w-auto"
+          class="h-full w-auto cursor-hover"
         />
       </a>
     </div>

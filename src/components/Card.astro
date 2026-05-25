@@ -11,10 +11,14 @@ const { data, aspectRatio = "aspect-[4/5]" } = Astro.props;
         <img
           src={"/" + data.image}
           alt={data.imgdescr}
-          class="absolute inset-0 w-full h-full object-cover"
+          class="absolute inset-0 w-full h-full object-cover cursor-hover"
         />
       </div>
-      <Heading htmlheading="h2" size="xsmall" stylingclasses="pt-sm lg:pt-md">
+      <Heading
+        htmlheading="h2"
+        size="xsmall"
+        stylingclasses="pt-sm lg:pt-md cursor-hover"
+      >
         {data.heading}
       </Heading>
     </a>

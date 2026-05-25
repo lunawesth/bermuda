@@ -34,6 +34,10 @@
     cursor: var(--cursor-hover); /* Skift til hover-cursor */
   }
 
+  .cursor-hover {
+    cursor: var(--cursor-hover); /* Bruger den brugerdefinerede hover-cursor */
+  }
+
   .case-font {
     font-family: "Courier New", Courier, monospace;
   }
