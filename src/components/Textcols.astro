@@ -13,7 +13,7 @@ const {number = "false", title, textVers = 1 } = Astro.props;
   >
     {
       textVers !== 3 && title !== "false" && (
-        <Heading htmlheading="h2" size="xxlarge" stylingclasses="">
+        <Heading htmlheading="h1" size="xxlarge" stylingclasses="">
           {title}
         </Heading>
         <div class="pt-gutter lg:pt-2xl"><slot /></div>
@@ -26,7 +26,7 @@ const {number = "false", title, textVers = 1 } = Astro.props;
          <div class="col-start-1 col-end-2 lg:col-start-6 lg:col-end-7"> {number !== "false" && (<Heading htmlheading="h2" size="large" stylingclasses="">
             {number}</Heading>)}</div>
             <div class="col-start-2 col-end-5 lg:col-start-7 lg:col-end-13"> 
-          <Heading htmlheading="h3" size="large">
+          <Heading htmlheading="h2" size="large">
             {title}
           </Heading>
           <div class="pt-sm lg:pt-gutter"><slot /></div>
