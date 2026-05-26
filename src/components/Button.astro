@@ -1,16 +1,10 @@
 ---
-const { variant = "default", type = "button", href, ...rest } = Astro.props;
+const { type = "button", href, ...rest } = Astro.props;
 
 const base =
-  "inline-flex items-center justify-center rounded-full px-gutter py-sm text-xs w-fit lg:px-lg lg:py-md lg:text-base";
+  "inline-flex items-center justify-center rounded-full px-gutter py-sm text-xs w-fit lg:px-lg lg:py-md lg:text-base btn-header text-default btn-default hover:bg-accent hover:border-accent duration-200 border-1 lg:border-2 border-default";
 
-const variants = {
-  default:
-    "btn-header text-default btn-default hover:bg-accent hover:border-accent duration-200 border-1 lg:border-2 border-default",
-  dark: "btn-dark text-dark",
-};
-
-const classes = `${base} ${variants[variant]} ${rest.class ?? ""}`;
+const classes = `${base} ${rest.class ?? ""}`;
 ---
 
 {

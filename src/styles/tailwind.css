@@ -55,10 +55,6 @@
     background-color: var(--color-primary);
   }
 
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
-
   .bg-secondary {
     background-color: var(--color-secondary);
   }
@@ -75,7 +71,7 @@
     color: var(--color-primary);
   }
 
-  .text-dark {
+  .text-secondary {
     color: var(--color-secondary);
   }
 

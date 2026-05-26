@@ -32,7 +32,10 @@ import Loader from "../components/Loader.astro";
     </div>
   </section>
   <section>
-    <img src="/placeholder-video.png" alt="Video af Bermudas programmer" />
+    <video width="full" height="full" autoplay muted loop playsinline>
+      <source src="/Bermuda-video.mp4" type="video/mp4" />
+      Din browser understøtter ikke dette video-tag.
+    </video>
     <Breaker
       titleTop="Curious?"
       titleBottom="Well, check out our work."
@@ -42,7 +45,7 @@ import Loader from "../components/Loader.astro";
   </section>
   <Border />
   <section
-    class="px-gutter lg:px-xl pt-3xl lg:py-5xl pb-2xl grid lg:grid-cols-12 lg:grid-rows-2"
+    class="px-gutter lg:px-xl pt-3xl pb-2xl grid lg:grid-cols-12 lg:grid-rows-2"
   >
     <div class="lg:col-span-4 lg:row-span-1">
       <Heading
@@ -68,10 +71,12 @@ import Loader from "../components/Loader.astro";
     </div>
 
     <!-- drop down starter her -->
-    <section class="pt-2xl lg:col-start-8 lg:col-end-13 lg:row-start-2">
-      <div class="border-t border-primary">
+    <section
+      class="pt-2xl lg:pt-md lg:col-start-8 lg:col-end-13 lg:row-start-2"
+    >
+      <div class="border-t lg:border-t-2 border-primary">
         <!-- ITEM -->
-        <div class="accordion-item border-b border-primary">
+        <div class="accordion-item border-b lg:border-b-2 border-primary">
           <button
             class="accordion-toggle w-full flex items-center justify-between py-md text-left"
           >
@@ -103,7 +108,7 @@ import Loader from "../components/Loader.astro";
         </div>
 
         <!-- ITEM -->
-        <div class="accordion-item border-b border-primary">
+        <div class="accordion-item border-b lg:border-b-2 border-primary">
           <button
             class="accordion-toggle w-full flex items-center justify-between py-md text-left"
           >
@@ -135,7 +140,7 @@ import Loader from "../components/Loader.astro";
         </div>
 
         <!-- ITEM -->
-        <div class="accordion-item border-b border-primary">
+        <div class="accordion-item border-b lg:border-b-2 border-primary">
           <button
             class="accordion-toggle w-full flex items-center justify-between py-md text-left"
           >
@@ -166,7 +171,7 @@ import Loader from "../components/Loader.astro";
         </div>
 
         <!-- ITEM -->
-        <div class="accordion-item border-b border-primary">
+        <div class="accordion-item border-b lg:border-b-2 border-primary">
           <button
             class="accordion-toggle w-full flex items-center justify-between py-md text-left"
           >

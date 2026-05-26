@@ -1,9 +1,9 @@
 ---
 import Heading from "./Heading.astro";
-const {number = "false", title, textVers = 1 } = Astro.props;
+const {number = "false", title, titleBottom = "false", textVers = 1 } = Astro.props;
 ---
 
-<div class="px-gutter lg:px-xl pb-3xl lg:pb-4xl">
+<section class="px-gutter lg:px-xl pb-3xl lg:pb-4xl">
   <div
     class={textVers === 2
       ? "gap-gutter lg:col-span-2 grid lg:grid-cols-2"
@@ -14,7 +14,8 @@ const {number = "false", title, textVers = 1 } = Astro.props;
     {
       textVers !== 3 && title !== "false" && (
         <Heading htmlheading="h1" size="xxlarge" stylingclasses="">
-          {title}
+         <span class="block">{title}</span>
+        {titleBottom !== "false" && (<span class="block">{titleBottom}</span>)}
         </Heading>
         <div class="pt-gutter lg:pt-2xl"><slot /></div>
       )
@@ -36,4 +37,4 @@ const {number = "false", title, textVers = 1 } = Astro.props;
 
     
   </div>
-</div>
+</section>
