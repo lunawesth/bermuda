@@ -9,5 +9,5 @@ const { titleTop, titleBottom, text, link } = Astro.props;
     <span class="block">{titleTop}</span>
     <span class="block">{titleBottom}</span>
   </Heading>
-  <Button href={link}>{text}</Button>
+  <Button href={"/" + link}>{text}</Button>
 </section>

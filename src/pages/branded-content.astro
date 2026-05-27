@@ -15,8 +15,9 @@ const options = {
     apikey,
   },
 };
-const data = await fetch(curl, options).then((res) => res.json());
-console.log(data);
+const data = (await fetch(curl, options).then((res) => res.json())).sort(
+  (a, b) => a.id - b.id
+);
 ---
 
 <MainLayout title="Branded Content">

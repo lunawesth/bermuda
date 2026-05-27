@@ -75,7 +75,7 @@ import Link from "./Link.astro";
   </div>
 </section>
 
-<script>
+<script client:load>
   const menuBtn = document.getElementById("menu-btn");
   const menuIcon = document.getElementById("menu-icon");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -84,9 +84,9 @@ import Link from "./Link.astro";
   const body = document.body;
 
   menuBtn?.addEventListener("click", () => {
-    if (mobileMenu.classList.contains("-translate-y-full")) {
+    if (mobileMenu.classList.contains("-translate-y-[100%]")) {
       // Åbn menuen
-      mobileMenu.classList.remove("-translate-y-full");
+      mobileMenu.classList.remove("-translate-y-[100%]");
       mobileMenu.classList.add("translate-y-0");
       menuBtn.classList.remove("text-default");
       menuBtn.classList.add("text-secondary"); // Skift skriftfarve til hvid
@@ -96,7 +96,7 @@ import Link from "./Link.astro";
       body.classList.add("overflow-hidden"); // Forhindrer scrolling
     } else {
       // Luk menuen
-      mobileMenu.classList.add("-translate-y-full");
+      mobileMenu.classList.add("-translate-y-[100%]");
       mobileMenu.classList.remove("translate-y-0");
       menuBtn.classList.remove("text-secondary");
       menuBtn.classList.add("text-default"); // Skift skriftfarve til sort
