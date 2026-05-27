@@ -2,7 +2,7 @@
 const { type = "button", href, ...rest } = Astro.props;
 
 const base =
-  "inline-flex items-center justify-center rounded-full px-gutter py-sm text-xs w-fit lg:px-lg lg:py-md lg:text-base btn-header text-default btn-default hover:bg-accent hover:border-accent duration-200 border-1 lg:border-2 border-default active:bg-accent active:border-accent";
+  "inline-flex items-center justify-center rounded-full px-gutter py-sm text-xs w-fit lg:px-lg lg:py-md lg:text-base btn-header text-default btn-default hover:bg-accent hover:border-accent duration-200 border-1 lg:border-2 border-default active:bg-accent active:border-accent touch-manipulation";
 
 const classes = `${base} ${rest.class ?? ""}`;
 ---
