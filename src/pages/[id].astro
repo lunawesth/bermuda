@@ -76,7 +76,10 @@ const { data } = Astro.props;
     <div class="pb-gutter lg:pb-3xl lg:col-start-2 lg:col-end-6">
       <Text stylingclasses="text-center pb-sm case-font font-bold">Trailer</Text
       >
-      <img src="/placeholder-video.png" alt="Trailer." />
+      <video width="full" height="full" playsinline controls>
+        <source src="/Bermuda-trailer.mp4" type="video/mp4" />
+        Din browser understøtter ikke dette video-tag.
+      </video>
     </div>
   </section>
   <div class="px-gutter lg:px-xl pb-2xl lg:pb-4xl">

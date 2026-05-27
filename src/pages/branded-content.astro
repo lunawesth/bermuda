@@ -40,11 +40,7 @@ console.log(data);
     <div
       class="col-span-3 lg:col-start-2 lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-sm lg:gap-gutter text-left [direction:rtl]"
     >
-      {
-        data.map((card, index) => (
-          <Card data={card} aspectRatio="aspect-[16/9]" />
-        ))
-      }
+      {data.map((card) => <Card data={card} aspectRatio="aspect-[16/9]" />)}
     </div>
   </section>
 

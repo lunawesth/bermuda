@@ -7,7 +7,7 @@ import Link from "./Link.astro";
   rel="stylesheet"
 />
 
-<section>
+<section class="z-50 relative">
   <!-- grøn top -->
   <div class="bg-nav-green pt-lg"></div>
 
@@ -53,7 +53,7 @@ import Link from "./Link.astro";
     <!-- mobile menu -->
     <button
       id="menu-btn"
-      class="lg:hidden z-50 flex items-center gap-2 text-default"
+      class="lg:hidden z-60 flex items-center gap-2 text-default"
       aria-label="Open menu"
     >
       menu
@@ -62,7 +62,7 @@ import Link from "./Link.astro";
 
     <div
       id="mobile-menu"
-      class="absolute top-0 left-0 w-full h-screen bg-nav-dark lg:hidden -translate-y-full transition-transform duration-500 ease-in-out pt-5xl pl-gutter"
+      class="absolute top-0 left-0 w-full h-screen bg-nav-dark lg:hidden -translate-y-full transition-transform duration-500 ease-in-out pt-5xl pl-gutter z-50"
     >
       <div class="flex flex-col gap-md">
         <Link href="/" variant="menudark">frontpage</Link>
@@ -85,9 +85,9 @@ import Link from "./Link.astro";
   const body = document.body;
 
   menuBtn?.addEventListener("click", () => {
-    if (mobileMenu.classList.contains("-translate-y-[-100%]")) {
+    if (mobileMenu.classList.contains("-translate-y-[100%]")) {
       // Åbn menuen
-      mobileMenu.classList.remove("-translate-y-[-100%]");
+      mobileMenu.classList.remove("-translate-y-[100%]");
       mobileMenu.classList.add("translate-y-0");
       menuBtn.classList.remove("text-default");
       menuBtn.classList.add("text-secondary"); // Skift skriftfarve til hvid
@@ -97,7 +97,7 @@ import Link from "./Link.astro";
       body.classList.add("overflow-hidden"); // Forhindrer scrolling
     } else {
       // Luk menuen
-      mobileMenu.classList.add("-translate-y-[-100%]");
+      mobileMenu.classList.add("-translate-y-[100%]");
       mobileMenu.classList.remove("translate-y-0");
       menuBtn.classList.remove("text-secondary");
       menuBtn.classList.add("text-default"); // Skift skriftfarve til sort
