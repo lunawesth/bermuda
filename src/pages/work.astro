@@ -33,18 +33,24 @@ const data = (await fetch(curl, options).then((res) => res.json())).sort(
   >
   <Border />
   <div
-    class="flex justify-end gap-sm lg:gap-gutter px-gutter lg:px-xl pt-md lg:pt-xl pb-2xl lg:pb-4xl"
+    class="flex justify-end gap-xl lg:gap-2xl px-gutter lg:px-xl pt-md lg:pt-xl pb-2xl lg:pb-4xl"
   >
-    <button class="filter-btn underline underline-offset-4" data-filter="tv2">
+    <button
+      class="filter-btn underline underline-offset-7 text-xl lg:text-2xl"
+      data-filter="tv2"
+    >
       TV2
     </button>
 
-    <button class="filter-btn underline underline-offset-4" data-filter="dr">
+    <button
+      class="filter-btn underline underline-offset-7 text-xl lg:text-2xl"
+      data-filter="dr"
+    >
       DR
     </button>
 
     <button
-      class="filter-btn underline underline-offset-4"
+      class="filter-btn underline underline-offset-7 text-xl lg:text-2xl"
       data-filter="viaplay"
     >
       Viaplay

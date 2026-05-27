@@ -209,7 +209,7 @@ import Loader from "../components/Loader.astro";
   </section>
 </MainLayout>
 
-<script>
+<script client:load>
   const items = document.querySelectorAll(".accordion-item");
 
   items.forEach((item) => {
