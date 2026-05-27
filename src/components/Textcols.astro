@@ -17,7 +17,7 @@ const {number = "false", title, titleBottom = "false", textVers = 1 } = Astro.pr
          <span class="block">{title}</span>
         {titleBottom !== "false" && (<span class="block">{titleBottom}</span>)}
         </Heading>
-        <div class="pt-gutter lg:pt-2xl"><slot /></div>
+        <div class="pt-gutter"><slot /></div>
       )
     }
 
