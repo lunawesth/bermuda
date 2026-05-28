@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Textcols from "../components/Textcols.astro";
 import Heading from "../components/Heading.astro";
 import Starhover from "../components/Starhover.astro";
+import Text from "../components/Text.astro";
 
 const items = [
   {
@@ -10,24 +11,32 @@ const items = [
     src: "/lykke.webp",
     alt: "Billede af Lykke Neiiendam.",
     caption: "Lykke Neiiendam",
+    title: "CEO & Partner",
+    tlf: "+45 45 67 80 97",
   },
   {
     type: "image",
     src: "/malene.webp",
     alt: "Billede af Malene Eikers.",
     caption: "Malene Eikers",
+    title: "Producer & Partner",
+    tlf: "+45 14 65 34 17",
   },
   {
     type: "image",
     src: "/line.webp",
     alt: "Billede af Line Gamborg.",
     caption: "Line Gamborg",
+    title: "Aftenshowet & Partner",
+    tlf: "+45 90 24 78 12",
   },
   {
     type: "image",
     src: "/lotte.webp",
     alt: "Billede af Lotte Dyva-Toubo.",
     caption: "Lotte Dyva-Toubo",
+    title: "COO & Partner",
+    tlf: "+45 54 86 18 29",
   },
 ];
 ---
@@ -51,11 +60,13 @@ const items = [
       <Starhover />
     </div>
   </div>
-  <Heading
-    htmlheading="h3"
-    size="large"
-    stylingclasses="hidden lg:px-xl lg:block lg:pb-5xl"
-    >Bermuda@invoicedrop.com</Heading
+  <a href="mailto:Bermuda@invoicedrop.com">
+    <Heading
+      htmlheading="h3"
+      size="large"
+      stylingclasses="hidden lg:px-xl lg:block lg:mb-5xl cursor-hover"
+      >Bermuda@invoicedrop.com</Heading
+    ></a
   >
 
   <Heading
@@ -74,12 +85,18 @@ const items = [
 
           <Heading
             htmlheading="h3"
-            size="xs"
+            size="xsmall"
             weight="medium"
             stylingclasses="pt-sm"
           >
             {item.caption}
           </Heading>
+          <Text variant="body" stylingclasses="font-medium">
+            {item.title}
+          </Text>
+          <Text variant="body" stylingclasses="cursor-hover">
+            {item.tlf}
+          </Text>
         </div>
       ))
     }
