@@ -13,7 +13,7 @@ import Loader from "../components/Loader.astro";
   <Loader />
 
   <section class="px-gutter lg:px-xl grid grid-cols-2 lg:grid-cols-4">
-    <div class="col-span-2 pb-xl lg:col-span-3">
+    <div class="col-span-2 pb-2xl lg:pb-xl lg:col-span-3">
       <Heading htmlheading="h1" size="xlarge" stylingclasses="lg:leading-20"
         >We produce engaging documentaries and television across news, lifestyle
         and reality, from intimate stories to high-end productions.</Heading
@@ -32,7 +32,7 @@ import Loader from "../components/Loader.astro";
     </div>
   </section>
   <section>
-    <video width="[100%]" height="[100%]" autoplay muted loop playsinline>
+    <video class="aspect-video" autoplay muted loop playsinline>
       <source src="/Bermuda-video.mp4" type="video/mp4" />
       Din browser understøtter ikke dette video-tag.
     </video>
